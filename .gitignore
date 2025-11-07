@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# Terraform
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+*.tfplan
+
+# System
+.DS_Store
+
+# Terraform local files
+.terraform/
+terraform.tfstate
+terraform.tfstate.*
+*.tfplan
+*.tfvars
+*.tfvars.json
+
+# Local CLI state
+.azlure/
+
+# Python environment
+azlure/Lib/
+azlure/Scripts/
+venv/
+__pycache__/
+
+# Logs and outputs
+*.log
+*.tmp
+*.bak

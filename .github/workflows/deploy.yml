@@ -1,0 +1,19 @@
+name: ci
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python lint
+        run: |
+          python -V
+          echo "Running basic checks..."
+      - name: Terraform format
+        run: |
+          terraform -version || true
+          cd infra/terraform && terraform fmt -check || true

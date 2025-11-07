@@ -1,0 +1,58 @@
+# Where to read diagnostics from
+storage:
+  # The tool uses AZURE_STORAGE_CONNECTION_STRING_LOGS env var by default.
+  # You can override here with an explicit connection string if you want:
+  connection_string: ""     # leave blank to use env var
+
+  # Containers to watch (created automatically by Azure diagnostics)
+  containers:
+    - "insights-logs-storageread"
+    - "insights-logs-auditevent"
+    # - "insights-activity-logs"    # uncomment if you export Activity Logs
+
+# Normalized event store
+database:
+  path: "log_pipeline/data/azlure.db"
+
+# Polling
+polling:
+  interval_seconds: 60
+  since_minutes: 1440   # only scan recent blobs on first run (24h)
+
+# Alerting
+alerts:
+  stdout: true
+  webhook:
+    enabled: false
+    url: ""    # e.g., Slack/Discord/Teams generic webhook
+
+# Detection rules (very simple filter engine)
+rules:
+  - name: "Public credential blob hit"
+    when:
+      category: "StorageRead"
+      contains:
+        field: "request_uri"
+        any:
+          - "/backup/credential"
+  - name: "SAS usage detected"
+    when:
+      category: "StorageRead"
+      contains:
+        field: "request_uri"
+        all:
+          - "sv="
+          - "sig="
+  - name: "Key Vault SecretGet"
+    when:
+      category: "AuditEvent"
+      contains:
+        field: "operation_name"
+        any: ["SecretGet"]
+  - name: "Automation Account read (activity)"
+    when:
+      category: "Activity"
+      contains:
+        field: "operation_name"
+        any:
+          - "Microsoft.Automation/automationAccounts/read"

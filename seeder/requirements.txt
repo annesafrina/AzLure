@@ -1,0 +1,4 @@
+azure-storage-blob>=12.18.0
+jinja2
+pyyaml
+click

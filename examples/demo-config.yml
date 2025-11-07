@@ -1,0 +1,29 @@
+# AzLure demo config (used by CLI)
+mode: auto             # auto | manual
+safe_mode: true
+
+subscription_id: ""    # optional; CLI will infer from az account show if blank
+tenant_name: "secureorg.onmicrosoft.com"
+location: "eastus"
+
+names:
+  resource_group: "azlure-rg"
+  public_storage_account: "secureorgbackup"   # must be globally unique; CLI will suffix if needed
+  private_storage_account: "secureorgpriv"    # must be globally unique; CLI will suffix if needed
+  public_container: "backup"
+  private_container: "secrets"
+  key_vault: "kv-azlure"
+  automation_account: "Automatic Backup"
+  app_display_name: "azlure-decoy-sp"
+
+features:
+  create_key_vault: true
+  create_automation_account: true
+  create_app_registration: true
+  grant_app_reader_on_rg: true
+  grant_app_kv_secrets_user: true
+  grant_app_automation_contributor: true
+
+logging:
+  enable_log_analytics: false
+  retention_days: 30
