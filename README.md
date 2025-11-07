@@ -1,4 +1,5 @@
 # AzLure — Azure Honeypot (IaC + CLI)
+![alt text](image.png)
 
 AzLure is a **cost‑aware Azure honeypot** you can auto‑deploy into your own tenant.
 It ships with a **CLI** and **Terraform**. Two modes:
@@ -19,9 +20,11 @@ It ships with a **CLI** and **Terraform**. Two modes:
 ## Example Output
 - Insecure Blob Storage
 Before:
+![alt text](11111.png)
 
 After:
-
+![alt text](22222.png)
+![alt text](33333.png)
 
 ### Prereqs
 - Terraform ≥ 1.5
