@@ -40,13 +40,16 @@ SAS URL grants access which reveals decoy credentials in the form of "client_id"
 ```bash
 cd azlure
 python cli/azlure.py auto --yes
+```
 
 ### 2) Manual deployment
 ```bash
 cd azlure
 python cli/azlure.py manual --yes
+```
 
 ### 3) Remove deployment
 ```bash
 cd azlure
 python cli\azlure.py destroy --yes
+```
