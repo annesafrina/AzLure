@@ -1,7 +1,7 @@
 # AzLure — Azure Honeypot (IaC + CLI)
 ![alt text](image.png)
 
-AzLure is a **cost‑aware Azure honeypot** you can auto‑deploy into your own tenant.
+AzLure is a **an Azure honeypot** you can auto‑deploy into your own tenant.
 It ships with a **CLI** and **Terraform**. Two modes:
 
 - **Automatic**: one‑command deploy with realistic defaults (public container, SAS chain to private blob with decoy creds, Key Vault, Automation Account).
