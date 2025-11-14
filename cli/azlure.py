@@ -65,7 +65,7 @@ def write_tfvars(cfg, outpath):
         "tenant_domain": cfg.get("tenant_name", "secureorg.onmicrosoft.com"),
         # if location already set, keep it; otherwise use user config or fallback
         "location": existing.get("location", cfg.get("location", "southeastasia")),
-        "resource_group": names.get("resource_group", "azlure-rg"),
+        "resource_group": names.get("resource _group", "azlure-rg"),
         "public_storage_account_name": names.get("public_storage_account", "secureorgbackup"),
         "private_storage_account_name": names.get("private_storage_account", "secureorgpriv"),
         "public_container_name": names.get("public_container", "backup"),

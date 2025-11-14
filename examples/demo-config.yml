@@ -4,7 +4,7 @@ safe_mode: true
 
 subscription_id: ""    # optional; CLI will infer from az account show if blank
 tenant_name: "secureorg.onmicrosoft.com"
-location: "eastus"
+location: "southeastasia"
 
 names:
   resource_group: "azlure-rg"
